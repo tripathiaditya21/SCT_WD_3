@@ -1,7 +1,7 @@
 /* General styling for the page */
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+    background: linear-gradient(135deg, #734698, #8f94fb);
     color: white;
     text-align: center;
     margin: 0;
@@ -35,7 +35,7 @@ body {
 
 /* Individual cell styling */
 .cell {
-    background-color: #4457b5;
+    background-color: #110f21;
     color: white;
     font-size: 2rem;
     display: flex;
@@ -61,7 +61,7 @@ body {
 button {
     margin: 10px;
     padding: 12px 25px;
-    background-color: #6c63ff;
+    background-color: #734698;
     color: white;
     border: none;
     border-radius: 5px;
@@ -75,7 +75,6 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Responsive design for smaller screens */
 @media (max-width: 768px) {
     .board {
         grid-template-columns: repeat(3, 1fr);
@@ -90,5 +89,44 @@ button:hover {
     button {
         font-size: 0.9rem;
         padding: 10px 20px;
+    }
+}
+.winning-background {
+    animation: confetti 5s linear infinite; /* Apply confetti animation */
+    background: linear-gradient(to bottom, #2980b9, #2c3e50); /* Example background gradient */
+}
+
+@keyframes confetti {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: gold; /* Example color */
+    opacity: 0;
+    animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(200px, 100vh, 0) rotate(360deg);
+        opacity: 0;
     }
 }

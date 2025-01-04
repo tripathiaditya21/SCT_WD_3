@@ -108,3 +108,4 @@ toggleModeButton.addEventListener('click', toggleMode);
 
 // Initialize with a default 3x3 board
 createBoard();
+
